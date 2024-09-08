@@ -1,0 +1,19 @@
+{
+  "name": "backend-mgzn-nodejs",
+  "version": "1.0.0",
+  "description": "backend for mgzn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1688.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.4.0",
+    "multer": "^1.4.5-lts.1",
+    "uuidv4": "^6.2.13"
+  }
+}
