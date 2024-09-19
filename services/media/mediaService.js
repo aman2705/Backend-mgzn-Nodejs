@@ -1,5 +1,5 @@
-const { saveMedia, getTotalSizeByUserId, getMediaByUserId  } = require('../models/mediaModel');
-const { uploadToS3 } = require('./s3Service');
+const { saveMedia, getTotalSizeByUserId, getMediaByUserId  } = require('../../models/mediaModel');
+const { uploadToS3 } = require('../s3Service');
 const { v4: uuidv4 } = require('uuid');
 const MAX_SIZE_LIMIT = 1 * 500 * 1024 * 1024; // 500 MB limit
 

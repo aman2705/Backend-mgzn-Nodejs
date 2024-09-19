@@ -1,4 +1,4 @@
-const { uploadMedia ,getMediaByUserId } = require('../services/mediaService');
+const { uploadMedia ,getMediaByUserId } = require('../services/media/mediaService');
 const { getUserByUsername } = require('../services/userService');
 /*This API is used for uploading the videos 
 If no file is uploaded while calling post API for upload it will throw the error
@@ -20,24 +20,6 @@ const handleUpload = async (req, res) => {
     }
 };
 
-
-const fetchUserVideos = async (req, res) => {
-    const userId = req.userId;
-    if (!userId) {
-        return res.status(400).json({ error: 'User ID is required' });
-    }
-
-    try {
-        const media = await getMediaByUserId(userId);
-        if (!media || media.length === 0) {
-            return res.status(404).json({ message: 'No media found for this user.' });
-        }
-        res.status(200).json({ media });
-    } catch (error) {
-        console.error('Error fetching media:', error);
-        res.status(500).json({ error: 'Error fetching media.' });
-    }
-};
 
 const fetchUserDetailsAndVideos = async (req, res) => {
     const { username } = req.params;
@@ -67,4 +49,4 @@ const fetchUserDetailsAndVideos = async (req, res) => {
     }
 };
 
-module.exports = { handleUpload,fetchUserVideos,fetchUserDetailsAndVideos};
+module.exports = { handleUpload,fetchUserDetailsAndVideos};
